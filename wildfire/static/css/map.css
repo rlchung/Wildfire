@@ -1,0 +1,20 @@
+html, body, #map-canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+}
+
+#topbar {
+  background-color:#000;
+  width:100%;
+}
+
+#wrapper {
+  height: calc(100% - 55px);
+}
+
+#map-canvas {
+  top: 55px;
+}

@@ -1,0 +1,25 @@
+{% extends "heatmap/base.html" %}
+
+{% block filter %}
+<div>
+<select class="form-control" id='filter'>
+    <option value="All">All</option>
+</select>
+</div>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<script type="text/javascript">
+    var tweets = {{ tweets | safe }};
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
+<script src="{% static "js/mapStyle.js" %}"></script>
+<script src="{% static "js/map.js" %}"></script>
+<link href="{% static "css/map.css" %}" rel="stylesheet"></link>
+<div id="map-canvas" style="z-index:4">
+</div>
+<div id="blah" style="position: relative; top:0px; left:15px; background: #000; opacity: 0.8; text-align:left; font-size: 0.5em; color: #fff">
+  <p style="font-weight: lighter">Positive</br>Negative</p>
+</div>
+{% endblock %}
